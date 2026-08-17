@@ -11,54 +11,97 @@
 <body>
     <main>
         <div class="main-container">
+
             <div class="title-wrapper">
+
                 <img src="../../assets/images/PurseLens_logo.png" alt="PurseLens logo">
+
                 <h2>PurseLens</h2>
+
             </div>
+
             <div class="heading-wrapper">
+
                 <h1>Create Your Free Account</h1>
+
                 <p>Join thousands who have taken control of their financial narrative.</p>
+
             </div>
+
             <form action="/api/auth/register/" method="POST">
+
                 <fieldset>
+
                     <label for="first-name">First name</label>
+
                     <input type="text" name="first_name" id="first-name-input" placeholder="James">
+                    
                 </fieldset>
+
                 <fieldset>
+
                     <label for="last-name">Last name</label>
+                    
                     <input type="text" name="last_name" id="last-name-input" placeholder="Smith">
+                    
                 </fieldset>
+
                 <fieldset>
+
                     <label for="email-input">Email</label>
+                    
                     <input type="email" name="email" id="email-input" placeholder="james.smith@example.com">
+                    
                 </fieldset>
+
                 <fieldset>
+
                     <label for="password-input">Password</label>
+                    
                     <input type="password" name="password" id="password-input" placeholder="•••••••••••">
+                    
                 </fieldset>
+
                 <input type="submit" value="Submit" id="submit-btn">
+
             </form>
+
             <div class="social-wrapper">
+
                 <div class="divider">
+
                     <hr class="divider-line"> 
+                    
                     <p>Or continue with</p>
+                    
                     <hr class="divider-line">
+                    
                 </div>
+
                 <div class="oauth-wrapper">
+
                     <a href="http://{domain_main}/accounts/google/login/callback/">
                         <img src="../../assets/images/google-logo.png" alt="Google logo">
                         continue with Google
                     </a>
+
                 </div>
+
             </div>
+
             <div class="sign-in-wrapper">
+
                 <p>Already have an account?</p>
+
                 <a href="../../pages/auth/login.html"><strong>Login</strong></a>
+
             </div>
         </div>
+
         <div class="input-validation-wrapper">
             <p class="error-output">Your password must be 12 characters or more.</p>
         </div>
+
     </main>
 </body>
 </html>
