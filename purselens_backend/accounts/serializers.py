@@ -51,8 +51,6 @@ class VerifyEmailSerializer(serializers.Serializer):
         raw_token = raw_token.strip()
         hash_token = hashlib.sha256(raw_token.encode()).hexdigest()
         
-        stored = EmailVerificationToken.objects.first()
-        
         try:
             verification = EmailVerificationToken.objects.select_related('user').get(token=hash_token)
         except EmailVerificationToken.DoesNotExist:
