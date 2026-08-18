@@ -1,7 +1,12 @@
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework_simplejwt.views import TokenObtainPairView
+from django.http import JsonResponse
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import ensure_csrf_cookie
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework_simplejwt.serializers import TokenRefreshSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.exceptions import AuthenticationFailed
 from django.contrib.auth import get_user_model
@@ -16,6 +21,8 @@ from .utils import (
     send_password_reset_email,
 )
 
+from .cookie_utils import set_auth_cookies, delete_auth_cookies
+
 from .serializers import (
     RegisterSerializer,
     LoginSerializer,
@@ -27,7 +34,6 @@ from .serializers import (
     UserSettingsReadSerializer,
     UserProfileReadSerializer,
     ProfileWriteSerializer,
-    ProfileReadSerializer,
     ChangePasswordSerializer,
     ForgotPasswordSerializer,
     ResetPasswordSerializer,
@@ -43,6 +49,16 @@ User = get_user_model()
 
 
 # Create your views here.
+@ensure_csrf_cookie
+def csrf_token_view(request):
+    
+    return JsonResponse({
+        "success": True,
+        "message": "CSRF cookie set"
+    })
+
+
+@method_decorator(csrf_protect, name="dispatch")
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
     permission_classes = [permissions.AllowAny]
@@ -64,6 +80,7 @@ class RegisterView(generics.CreateAPIView):
         }, status=status.HTTP_201_CREATED)
 
 
+@method_decorator(csrf_protect, name="dispatch")
 class VerifyEmailView(APIView):
     permission_classes = [permissions.AllowAny]
     
@@ -84,16 +101,27 @@ class VerifyEmailView(APIView):
         
         # Issue JWT token now
         refresh = RefreshToken.for_user(user)
-        return Response({
+        
+        response = Response({
             "success": True,
             "message": "Email verified successfully",
             "data": {
-                "token": {
-                    "refresh": str(refresh),
-                    "access": str(refresh.access_token)
+                "user": {
+                    "id": user.id,
+                    "email": user.email,
+                    "first_name": user.first_name,
+                    "last_name": user.last_name,
                 }
             }
         }, status=status.HTTP_200_OK)
+        
+        set_auth_cookies(
+            response,
+            access_token=str(refresh.access_token),
+            refresh_token=str(refresh),
+        )
+        
+        return response
    
 
 class ResendVerificationView(APIView):
@@ -120,6 +148,7 @@ class ResendVerificationView(APIView):
         }, status=status.HTTP_200_OK)
 
 
+@method_decorator(csrf_protect, name="dispatch")
 class LoginView(TokenObtainPairView):
     serializer_class = LoginSerializer
     permission_classes = [permissions.AllowAny]
@@ -148,7 +177,7 @@ class LoginView(TokenObtainPairView):
         user = serializer.user
         tokens = serializer.validated_data
         
-        return Response({
+        response = Response({
             "success": True,
             "message": "Login successful",
             "data": {
@@ -158,40 +187,78 @@ class LoginView(TokenObtainPairView):
                     "first_name": user.first_name,
                     "last_name": user.last_name,
                 },
-                "tokens": {
-                    "access": str(tokens['access']),
-                    "refresh": str(tokens['refresh']),
-                }
             }
         }, status=status.HTTP_200_OK)
+        
+        set_auth_cookies(
+            response,
+            access_token=str(tokens["access"]),
+            refresh_token=str(tokens["refresh"]),
+        )
+        
+        return response
     
-    
+
 class LogoutView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
     
     def post(self, request):
-        refresh_token = request.data.get("refresh")
+        refresh_token = request.COOKIES.get("refresh_token")
         
-        if not refresh_token:
-            return Response({
-                "success": False,
-                "detail": "Refresh token is required."
-            }, status=status.HTTP_400_BAD_REQUEST)
-        
-        try:
-            token = RefreshToken(refresh_token)
-            token.blacklist()
-        except Exception:
-            return Response({
-                "success": False,
-                "detail": "Invalid or expired token."
-            },status=status.HTTP_400_BAD_REQUEST)
+        if refresh_token:
+            try:
+                token = RefreshToken(refresh_token)
+                token.blacklist()
+            except Exception:
+                # Even if the refresh token is invalid or expired,
+                # clear the authentication cookies.
+                pass
             
-        return Response({
+        response = Response({
             "success": True,
             "detail": "Logged out successfully."
         }, status=status.HTTP_200_OK)
         
+        delete_auth_cookies(response)
+        
+        return response
+        
+
+class CookieTokenRefreshView(TokenRefreshView):
+    
+    def post(self, request, *args, **kwargs):
+        refresh_token = request.COOKIES.get("refresh_token")
+        
+        if not refresh_token:
+            return Response({
+                "success": False,
+                "message": "No refresh token available."    
+            }, status=status.HTTP_401_UNAUTHORIZED)
+            
+        serializer = self.get_serializer(
+            data={
+                "refresh": refresh_token
+            }
+        )
+        
+        serializer.is_valid(raise_exception=True)
+        
+        response = Response({
+            "success": True,
+            "message": "Token refreshed successfully"
+        }, status=status.HTTP_200_OK)
+        
+        set_auth_cookies(
+            response,
+            access_token=serializer.validated_data["access"],
+            refresh_token=serializer.validated_data.get(
+                "refresh",
+                refresh_token
+            ),
+        )
+        
+        return response
+
 
 class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
