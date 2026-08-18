@@ -38,6 +38,7 @@ DEBUG = os.getenv("DJANGO_DEBUG")
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
+    "teressa-idoneous-kristle.ngrok-free.dev",
 ]
 
 
@@ -69,7 +70,8 @@ INSTALLED_APPS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'accounts.authentication.CookieJWTAuthentication',
     ),
     
     'DEFAULT_THROTTLE_CLASSES': [
@@ -254,6 +256,8 @@ DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+CORS_ALLOW_CREDENTIALS = True
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
@@ -264,3 +268,11 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     'https://teressa-idoneous-kristle.ngrok-free.dev',
 ]
+
+
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = "None"
+
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = "None"
+
