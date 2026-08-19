@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Account</title>
+    <link rel="stylesheet" href="../../css/pages/register.css">
+    <link rel="stylesheet" href="../../css/themes/light.css">
+    <link rel="shortcut icon" href="../../assets/images/PurseLens_logo.png" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <section class="verification-section">
+            <div class="main-container">
+
+                <div class="title-wrapper">
+                    <img src="../../assets/images/PurseLens_logo.png" alt="PurseLens logo">
+                    <h2>PurseLens</h2>
+                </div>
+
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" fill="currentColor" class="bi bi-envelope-check"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z" />
+                            <path
+                                d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686" />
+                        </svg>
+                    </div>
+
+                    <h1 class="card-title">Check your email</h1>
+                    
+                    <div class="card-sub-wrapper">
+                        <p class="card-sub">We've sent a verification link to</p>
+                        <p class="card-email" id="user-email"></p>
+                    </div>
+
+                    <p class="card-notice">
+                        Please verify your email address to activate
+                        your PurseLens account.
+                    </p>
+
+                    <a href="" class="email-link">
+                        Open Email
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right"
+                            viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
+                            <path fill-rule="evenodd"
+                                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
+                        </svg>
+                    </a>
+
+                    <div class="resend-wrapper">
+                        <p>Didn't receive the email?</p>
+                        <a href="#api/auth/resend-verification/" class="link-resend">Resend verification email</a>
+                    </div>
+
+                    <small class="card-spam">Check your spam or junk folder if you don't see it.</small>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 PurseLens. All rights reserved.</p>
+    </footer>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/verify_email.js"></script>
+</body>
+</html>
