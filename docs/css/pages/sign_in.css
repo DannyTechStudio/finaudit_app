@@ -73,6 +73,7 @@ form {
     gap: 1rem;
     border-radius: 10px;
     background-color: var(--bg);
+    box-shadow: var(--shadow-md), 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 fieldset {
@@ -94,17 +95,22 @@ fieldset input {
     width: 92%;
     padding: 8px;
     outline: none;
-    border-color: var(--border-2);
+    border: 2px solid var(--border-2);
     border-radius: 5px;
 }
 
 #login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     width: 80%;
     padding: 10px;
     margin: 0;
     font-size: 18px;
+    font-weight: bold;
     border: none;
-    border-radius: 20px;
+    border-radius: 50px;
     color: var(--custom-orange-text-color);
     background-color: var(--custom-orange);
     transition: 0.3s ease-in-out;
@@ -114,6 +120,24 @@ fieldset input {
 #login-btn:hover {
     color: var(--custom-orange-text-color-hover);
     background-color: var(--custom-orange-hover);
+}
+
+.loader {
+    display: none;
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+        radial-gradient(farthest-side, #FFFFFF 94%, #0000) top/5px 5px no-repeat,
+        conic-gradient(#0000 30%, #FFFFFF);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 5px), #000 0);
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(1turn)
+    }
 }
 
 .social-wrapper {
@@ -160,7 +184,7 @@ fieldset input {
     padding: 8px;
     gap: 0.3rem;
     border: 1px solid var(--border);
-    border-radius: 20px;
+    border-radius: 50px;
     font-weight: bold;
     color: var(--links);
     text-decoration: none;
@@ -197,7 +221,7 @@ fieldset input {
     text-decoration: underline;
 }
 
-.input-validation-wrapper {
+.error-output {
     position: fixed;
     left: 2%;
     top: 85%;
@@ -207,11 +231,19 @@ fieldset input {
     width: auto;
     height: 35px;
     padding: 0 12px 0 12px;
+    border: 2px solid var(--border);
     border-radius: 10px;
-    background-color: var(--danger-2);
 }
 
-.input-validation-wrapper p {
+.success {
+    background-color: var(--success);
+}
+
+.danger {
+    background-color: var(--danger-3);
+}
+
+.error-output {
     color: var(--deep-blue);
     font-size: 16px;
 }
