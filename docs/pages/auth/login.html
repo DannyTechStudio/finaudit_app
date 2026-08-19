@@ -10,46 +10,63 @@
 </head>
 <body>
     <main>
+
         <div class="main-container">
+            
             <div class="title-wrapper">
                 <img src="../../assets/images/PurseLens_logo.png" alt="PurseLens logo">
                 <h2>PurseLens</h2>
             </div>
+
             <div class="heading-wrapper">
                 <h1>Welcome back</h1>
                 <p>Secure access to your financial narrative.</p>
             </div>
+
             <form action="/api/auth/login/" method="POST">
+
                 <fieldset>
                     <label for="email-input">Email</label>
                     <input type="email" name="email" id="email-input" placeholder="james.smith@example.com">
                 </fieldset>
+
                 <fieldset>
                     <label for="password-input">Password</label>
                     <input type="password" name="password" id="password-input" placeholder="••••••••••••">
                 </fieldset>
-                <input type="button" value="Login" id="login-btn">
+
+                <button type="submit" id="login-btn">
+                    <div class="loader"></div>
+                    <span class="text-span">Sign In</span>
+                </button>
             </form>
+
             <div class="social-wrapper">
+
                 <div class="divider">
                     <hr class="divider-line">
                     <p>Or continue with</p>
                     <hr class="divider-line">
                 </div>
+
                 <div class="oauth-wrapper">
                     <a href="http://{domain_main}/accounts/google/login/callback/">
                         <img src="../../assets/images/google-logo.png" alt="Google logo">
                         continue with Google
                     </a>
                 </div>
+
             </div>
+
             <div class="sign-up-wrapper">
                 <p>Don't have an account?</p>
                 <a href="../../pages/auth/register.html"><strong>Register here</strong></a>
             </div>
+
             <div class="input-validation-wrapper">
-                <p class="error-output">Your password must be 12 characters or more.</p>
+                <p class="error-output"></p>
             </div>
+
         </div>
     </main>
 </body>
