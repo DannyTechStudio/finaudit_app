@@ -1,6 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
+}
+
+p {
+    font-size: 18px;
 }
 
 main {
@@ -11,6 +21,25 @@ main {
     width: 100%;
     min-height: 100vh;
     background-color: var(--bg-2);
+}
+
+.sign-up-section {
+    display: flex;
+}
+
+.verification-section {
+    display: flex;
+}
+
+main section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-2);
+    width: 100%;
 }
 
 .main-container {
@@ -26,6 +55,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 0.5rem;
     width: 32%;
     padding: 0;
     margin-bottom: 2rem;
@@ -38,8 +68,6 @@ main {
 }
 
 .title-wrapper h2 {
-    padding: 0;
-    margin: 0;
     color: var(--custom-blue);
 }
 
@@ -52,27 +80,36 @@ main {
 }
 
 .heading-wrapper h1 {
-    padding: 0;
-    margin: 0;
     color: var(--custom-blue);
 }
 
 .heading-wrapper p {
-    padding: 0;
-    margin: 0;
+    text-align: center;
     color: var(--text-primary)
 }
 
-form {
-    width: 90%;
-    padding: 20px 0 20px 5px;
+form,
+.card {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
+    gap: 2rem;
     border-radius: 10px;
     background-color: var(--bg);
+    box-shadow: var(--shadow-md), 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+form {
+    gap: 1rem;
+    padding: 20px 0 20px 5px;
+    justify-content: flex-start;
+}
+
+.card {
+    gap: 2rem;
+    padding: 20px;
+    justify-content: center;
 }
 
 fieldset {
@@ -100,9 +137,12 @@ fieldset input {
 }
 
 #submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     width: 80%;
     padding: 10px;
-    margin: 0;
     font-size: 18px;
     font-weight: bold;
     border: none;
@@ -118,13 +158,33 @@ fieldset input {
     background-color: var(--custom-orange-hover);
 }
 
+.loader {
+    display: none;
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+        radial-gradient(farthest-side, #FFFFFF 94%, #0000) top/5px 5px no-repeat,
+        conic-gradient(#0000 30%, #FFFFFF);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 5px), #000 0);
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(1turn)
+    }
+}
+
 .social-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
     width: 100%;
-    padding: 0;
+    margin: 20px 0;
+
 }
 
 .social-wrapper p {
@@ -150,7 +210,7 @@ fieldset input {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 65%;
+    width: 80%;
 }
 
 .oauth-wrapper a {
@@ -198,7 +258,7 @@ fieldset input {
     text-decoration: underline;
 }
 
-.input-validation-wrapper {
+.error-output {
     position: fixed;
     left: 2%;
     top: 85%;
@@ -208,11 +268,100 @@ fieldset input {
     width: auto;
     height: 35px;
     padding: 0 12px 0 12px;
+    color: var(--text-primary);
+    border: 2px solid var(--border);
     border-radius: 10px;
-    background-color: var(--danger-2);
+    transition: all 0.3s ease-in-out;
+}
+
+.input-validation-wrapper .success {
+    background-color: var(--success);
+}
+
+.input-validation-wrapper .danger {
+    background-color: var(--danger-3);
 }
 
 .input-validation-wrapper p {
     color: var(--deep-blue);
     font-size: 16px;
+}
+
+.icon-wrapper {
+    padding: 12px;
+    border-radius: 50px;
+    background-color: var(--surface-2);
+}
+
+.icon-wrapper svg {
+    color: var(--success);
+}
+
+.card h1, p {
+    color: var(--text-primary);
+}
+
+.card p {
+    font-size: 18px;
+}
+
+.card-sub-wrapper p,
+.card-notice {
+    text-align: center;
+}
+
+.card-email {
+    font-weight: bold;
+}
+
+.email-link {
+    width: 80%;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--custom-orange-text-color);
+    background-color: var(--custom-orange);
+    border-radius: 8px;
+}
+
+.email-link:hover {
+    background-color: var(--custom-orange-hover);
+}
+
+.resend-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.resend-wrapper a {
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--links);
+    transition: all 0.3s ease-in-out;
+}
+
+.resend-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.card-spam {
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
 }
