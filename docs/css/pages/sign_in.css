@@ -76,6 +76,15 @@ form {
     box-shadow: var(--shadow-md), 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
+.input-wrapper {
+    position: relative;
+    width: 88%;
+}
+
+.input-wrapper input {
+    padding-right: 44px;
+}
+
 fieldset {
     width: 80%;
     display: flex;
@@ -91,8 +100,14 @@ fieldset label {
     color: var(--text-primary);
 }
 
+fieldset label.required::after {
+    content: " *";
+    color: var(--danger-4);
+    font-size: 600;
+}
+
 fieldset input {
-    width: 92%;
+    width: 90%;
     padding: 8px;
     outline: none;
     border: 2px solid var(--border-2);
@@ -120,6 +135,48 @@ fieldset input {
 #login-btn:hover {
     color: var(--custom-orange-text-color-hover);
     background-color: var(--custom-orange-hover);
+}
+
+.toggle-pw-btn {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50px;
+    line-height: 0;
+    color: var(--text-muted);
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.toggle-pw-btn:hover {
+    color: var(--text-primary);
+    background-color: var(--surface-3);
+}
+
+.toggle-pw-btn:focus-visible {
+    outline: 2px solid rgba(250, 134, 39, 0.6);
+    outline-offset: 1px;
+}
+
+/* ── Icon swap — aria-pressed is the only hook needed ── */
+.toggle-pw-btn .icon-eye {
+    display: block;
+}
+
+.toggle-pw-btn .icon-eye-off {
+    display: none;
+}
+
+.toggle-pw-btn[aria-pressed="true"] .icon-eye {
+    display: none;
+}
+
+.toggle-pw-btn[aria-pressed="true"] .icon-eye-off {
+    display: block;
 }
 
 .loader {
