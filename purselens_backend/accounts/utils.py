@@ -9,6 +9,7 @@ from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.conf import settings
 
 from .models import EmailVerificationToken
+from .services.email_service import send_verification_email as send_verification_email_via_email
 
 
 def send_password_reset_email(user, request):
@@ -47,14 +48,12 @@ def generate_verfication_token(user):
 
 
 def send_verification_email(user, raw_token):
-    verification_link = f"{settings.FRONTEND_URL}/verify-email/?token={raw_token}"
+    # verification_link = f"{settings.FRONTEND_URL}/verify-email/?token={raw_token}"
+    verification_link = f"http://localhost:5500/pages/auth/verify_email.html?token={raw_token}"
 
-    send_mail(
-        subject="FinAudit — Verify Your Email",
-        message=f"Hi {user.first_name},\n\nPlease verify your email by clicking the link below:\n{verification_link}\n\nThis link expires in 5 minutes.\n\nIf you did not create an account, ignore this email.",
-        from_email=settings.DEFAULT_FROM_EMAIL,
-        recipient_list=[user.email],
-        fail_silently=False,
+    send_verification_email_via_email(
+        user=user,
+        verification_link=verification_link
     )
 
 
