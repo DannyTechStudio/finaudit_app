@@ -254,7 +254,15 @@ FRONTEND_URL = os.environ.get('FRONTEND_URL')
 
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = "anymail.backends.resend.EmailBackend"
+
+RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
+
+RESEND_FROM_EMAIL = os.environ.get(
+    "RESEND_FROM_EMAIL",
+    "onboarding@resend.dev"
+)
 
 CORS_ALLOWED_ORIGINS = [
     
