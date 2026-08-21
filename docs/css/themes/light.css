@@ -10,6 +10,7 @@
     --faded-bg: #9c92e320;
     --faded-bg-2: #9b92e348;
     --faded-bg-3: #bdcee565;
+    --border-visible: #0f0e0eb5;
     --border: #49484845;
     --border-2: #49484832;
     --box-shadow: #00000034;
@@ -48,14 +49,16 @@
     
     --danger: #f20b0b;
     --danger-2: #fa7a7a2b;
-    --danger-3: #f0181861;
+    --danger-3: #ff00004e;
     --danger-4: #ef4444;
 
     --warning: #f7bc5c;
     --warning-2: #f39a0b33;
     --warning-3: #f59e0b;
+    --warning-4: #ffa6006c;
 
     --info: #1565C0;
+    --info: #1075e81b;
 
     /* Shadows */
     --shadow-sm: 2px 2px 4px rgba(0,0,0,0.08);
