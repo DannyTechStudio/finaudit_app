@@ -32,7 +32,7 @@ def send_verification_email(user, verification_link):
                        font-weight:bold;
                        border-radius:6px;
                     ">
-                    Verify Email Address
+                    Verify Email
                 </a>
             </p>
             
