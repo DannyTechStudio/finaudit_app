@@ -48,7 +48,7 @@ def generate_verfication_token(user):
 
 
 def send_verification_email(user, raw_token):
-    verification_link = f"{settings.FRONTEND_URL}/pages/auth/verify-email/?token={raw_token}"
+    verification_link = f"{settings.FRONTEND_URL}/pages/auth/verify_email.html/?token={raw_token}"
 
     send_verification_email_via_service(
         user=user,
