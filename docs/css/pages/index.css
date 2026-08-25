@@ -453,8 +453,10 @@ footer {
 }
 
 .footer-links {
+    font-size: 18px;
     text-decoration: none;
     color: var(--links);
+    transition: all 0.3s ease-in-out;
 }
 
 .footer-links:hover {
