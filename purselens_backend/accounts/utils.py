@@ -9,7 +9,7 @@ from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.conf import settings
 
 from .models import EmailVerificationToken
-from .services.email_service import send_verification_email as send_verification_email_via_service
+from .services.email_service import send_verification_email as send_verification_email_via_resend
 
 
 def send_password_reset_email(user, request):
@@ -48,9 +48,13 @@ def generate_verfication_token(user):
 
 
 def send_verification_email(user, raw_token):
-    verification_link = f"{settings.FRONTEND_URL}/pages/auth/verify_email.html?token={raw_token}"
+    verification_link = (
+        f"{settings.FRONTEND_URL.rstrip('/')}"
+        f"/pages/auth/verify_email.html"
+        f"?token={raw_token}"
+    )
 
-    send_verification_email_via_service(
+    send_verification_email_via_resend(
         user=user,
         verification_link=verification_link
     )
