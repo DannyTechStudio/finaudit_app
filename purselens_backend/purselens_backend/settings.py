@@ -145,8 +145,8 @@ SOCIALACCOUNT_PROVIDERS = {
 AXES_ENABLED = True
 AXES_FAILURE_LIMIT = 5                                      # Lock after 5 failed attempts
 AXES_ENABLE_COOLOFF_TIME = True
-AXES_COOLOFF_TIME = timedelta(minutes=30)                   # Lockout duration
-AXES_LOCKOUT_MESSAGE = "Too many failed login attempts. Please try again in 30 minutes."
+AXES_COOLOFF_TIME = timedelta(minutes=5)                   # Lockout duration
+AXES_LOCKOUT_MESSAGE = "Too many failed login attempts. Please try again in 5 minutes."
 
 AXES_LOCK_PARAMETERS = [["email", "ip_address"]]         # Pairs email identity with local IP address
 
