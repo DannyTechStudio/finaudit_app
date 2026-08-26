@@ -27,7 +27,7 @@ def send_verification_email(user, verification_link):
                        display:inline-block;
                        padding:12px 20px;
                        background:#fa8627;
-                       color:#292b51;
+                       color:#030820;
                        text-decoration:none;
                        font-weight:bold;
                        border-radius:6px;
