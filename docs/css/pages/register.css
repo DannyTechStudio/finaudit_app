@@ -412,7 +412,7 @@ fieldset input:focus {
     background-color: var(--custom-orange-hover);
 }
 
-/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader-2"></div> */
 .loader-2 {
     width: fit-content;
     font-weight: bold;
@@ -432,6 +432,25 @@ fieldset input:focus {
     }
 }
 
+.loader-3 {
+    width: fit-content;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 18px;
+    clip-path: inset(0 3ch 0 0);
+    animation: loading 1s steps(4) infinite;
+}
+
+.loader-3:before {
+    content: "Resending Verification Email..."
+}
+
+@keyframes loading {
+    to {
+        clip-path: inset(0 -1ch 0 0)
+    }
+}
+
 .resend-wrapper {
     display: flex;
     flex-direction: column;
@@ -440,15 +459,13 @@ fieldset input:focus {
     gap: 0.5rem;
 }
 
-.resend-wrapper a {
-    font-size: 18px;
-    text-decoration: none;
+.resend-wrapper .link-resend {
+    border: none;
+    font-size: 16px;
     color: var(--links);
-    transition: all 0.3s ease-in-out;
-}
-
-.resend-wrapper a:hover {
-    text-decoration: underline;
+    background-color: transparent;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
 }
 
 .card-spam {
