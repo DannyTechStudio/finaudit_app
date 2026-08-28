@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // DOM Elements
     const form = document.getElementById("signup-form");
     const submitBtn = document.getElementById("submit-btn");
-    const submitBtnText = document.querySelector(".text-span")
+    const submitBtnText = document.querySelector(".text-span");
     const loader = document.querySelector(".loader");
     const messageOutput = document.querySelector(".message-output");
     
@@ -48,18 +48,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             console.log("Registration successful:", response);
 
-            messageOutput.textContent = "Registration successful.";
+            messageOutput.textContent = response.message;
             messageOutput.style.display = "flex";
             messageOutput.classList.add("success");
             
+            // Clear message after 5secs
             setTimeout(() => {
                 
                 clearError();
-
-            }, 5000);
-
-            // Redirect to verification page
-            window.location.href = `./verify_email.html?email=${encodeURIComponent(email)}`;
+                
+            }, 2000);
+            
+            // Redirect to verify page after 2secs
+            setTimeout(() => {
+                
+                window.location.href = `../../pages/auth/verify_email.html?email=${encodeURIComponent(email)}`;
+                
+            }, 2000);
 
         } catch (error) {
 
@@ -67,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             messageOutput.textContent = `${error}`;
             messageOutput.style.display = "flex",
-            messageOutput.classList.add("danger"); 
+            messageOutput.classList.add("error"); 
             
             handleRegistrationError(error);
             
@@ -92,8 +97,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (isLoading) {
 
+            // Add loading animation - no text
             loader.style.display = "block";
-            submitBtnText.textContent = "Creating Account...";
+            submitBtnText.textContent = "";
             
         } else {
             
@@ -109,7 +115,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         messageOutput.textContent = message;
         messageOutput.style.display = "flex";
-        messageOutput.classList.add("danger")
+        messageOutput.classList.add("error");
         
     }
     
@@ -118,7 +124,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         
         messageOutput.textContent = "";
         messageOutput.style.display = "none";
-        messageOutput.classList.remove("danger");
+        messageOutput.classList.remove("error");
 
     }
 
