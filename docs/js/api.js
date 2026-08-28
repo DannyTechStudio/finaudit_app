@@ -106,7 +106,8 @@ async function apiRequest(endpoint, options = {}) {
 
         const error = new Error(
             data?.message ||
-            data?.detail || 
+            data?.detail ||
+            data?.token?.[0] ||
             "Something went wrong. Please try again."
         );
 
