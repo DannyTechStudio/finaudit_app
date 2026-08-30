@@ -1,158 +1,779 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PurseLens | Smart Personal Finance & Budget Tracker</title>
+    <title>PurseLens | Financial Clarity, Made Simple</title>
     <link rel="stylesheet" href="css/themes/light.css">
     <link rel="stylesheet" href="css/pages/index.css">
     <link rel="shortcut icon" href="assets/images/PurseLens_logo.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
+
+        <!-- NAVBAR -->
         <nav class="nav">
-            <div class="logo-title-wrapper">
+
+            <a href="#home" class="nav-logo">
                 <img src="assets/images/PurseLens_logo.png" alt="PurseLens logo image" srcset="">
-                <h2 class="title">PurseLens</h2>
-            </div>
-            <div class="nav-links">
-                <a class="get-started-link" href="pages/auth/register.html">Get Started</a>
-                <a class="sign-in-link" href="pages/auth/login.html">Sign in</a>
+                <span class="nav-name">PurseLens</span>
+            </a>
+
+            <div class="nav-links-container">
+
+                <div class="nav-links-wrapper">
+                    <a href="#home">Home</a>
+                    <a href="#overview">How It Works</a>
+                    <a href="#features">Features</a>
+                    <a href="#insights">Insights</a>
+                    <a href="#security">Security</a>
+                </div>
+                
+                <div class="nav-cta-wrapper">
+                    <a class="nav-signin" href="pages/auth/login.html">Sign In</a>
+                    <a class="nav-cta" href="pages/auth/register.html">Get Started</a>
+                </div>
+                
             </div>
         </nav>
-    </header>
-    <main>
-        <section class="hero-section">
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+
+            <div class="hero-bg">
+                <div class="hero-grid"></div>
+                <div class="hero-glow1"></div>
+                <div class="hero-glow2"></div>
+            </div>
+        
             <div class="hero-section-text-wrapper">
-                <p class="badge">● Financial Clarity Made Simple!</p>
-                <h1 id="dynamic-headline"></h1>
-                <p class="descriptions">
-                    Take complete control of your money without the stress. Our platform gives you a clear, crystal-clear overview of your
-                    complete financial life by bringing your income, daily expenses, and active budgets into one beautiful, easy-to-use
-                    dashboard. Instead of wondering where your hard-earned money went at the end of the month, you can track your spending
-                    patterns as they happen. We break down the complex data into simple, actionable insights, empowering you to hit your
-                    savings goals faster and make confident, smarter financial decisions every single day.
-            </div>
-            <div class="CTA-btn-wrapper">
-                <a class="get-started-link" href="pages/auth/register.html">Get Started Today for Free</a>
-                <a class="sign-in-link" href="pages/auth/login.html">Sign in</a>
-            </div>
-        </section>
-        <section class="dashboard-preview-section">
-            <div class="dashboard-preview-wrapper">
-                <img class="dashboard-preview-img" src="assets/images/dashboard-preview.png" alt="dasboard-preview">
-                <div class="features-descriptions-wrapper">
-                    <h1>See Your Finances at a Glance</h1>
-                    <p class="short-descriptions">A beautifully organized dashboard that brings together your income, expenses, budgets, and reports to help you stay in control of every cedi.</p>
-                    <div class="features-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
-                            <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z"/>
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                            <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/>
-                        </svg>
-                        <p><strong>Income</strong>: Track all your income sources and monitor your earnings with a clear monthly overview.</p>
-                    </div>
-                    <div class="features-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
-                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
-                            <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
-                        </svg>
-                        <p><strong>Expenses</strong>: View every expense in one place and quickly identify where your money is being spent.</p>
-                    </div>
-                    <div class="features-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
-                            <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z"/>
-                        </svg>
-                        <p><strong>Budget Progress</strong>: Stay within your budget with real-time progress indicators and spending summaries.</p>
-                    </div>
-                    <div class="features-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
-                            <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1zm1 12h2V2h-2zm-3 0V7H7v7zm-5 0v-3H2v3z"/>
-                        </svg>                       
-                        <p><strong>Monthly Reports</strong>: Review comprehensive monthly reports that summarize your financial activity with easy-to-read charts.</p>
-                    </div>
-                    <div class="features-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07"/>
-                        </svg>
-                        <p><strong>Spending Trends</strong>: Discover patterns in your spending over time and identify opportunities to save more.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="features-section">
-            <div class="main-features-container">
-                <div class="heading-container">
-                    <h1>Structured for Clarity</h1>
-                    <p class="brief-descriptions">Everything you need to orchestrate your finances, organized perfectly.</p>
-                </div>
-                <div class="features-container">
-                    <div class="features">
-                        <h2>Income Tracking</h2>
-                        <p class="feature-descriptions">Monitor every source of earnings whether be it salary, side-hustle and more .</p>
-                    </div>
-                    <div class="features">
-                        <h2>Expense Tracking</h2>
-                        <p class="feature-descriptions">Record every expense effortlessly and always know where your money goes.</p>
-                    </div>
-                    <div class="features">
-                        <h2>Multi-Category Budgets</h2>
-                        <p class="feature-descriptions">Plan spending across various categories - groceries, transport, entertainment, utiliies and more.</p>
-                    </div>
-                    <div class="features">
-                        <h2>Budget Management</h2>
-                        <p class="feature-descriptions">Set structured limits. Our smart system warns you before you overspend, keeing your financial blueprint intact.</p>
-                    </div>
-                    <div class="features">
-                        <h2>Interactive Reports</h2>
-                        <p class="feature-descriptions">Generate monthly and yearly reports that ake your finances easy to understand.</p>
-                    </div>
-                    <div class="features">
-                        <h2>Reports Analytics</h2>
-                        <p class="feature-descriptions"> Visualize your wealth flow. Uncover trends and patterns over time with clean, editoral-style charts.</p>
-                    </div>
-                    <div class="features">
-                        <h2>Financial Insights</h2>
-                        <p class="feature-descriptions">Actionable proactive advice tailored to your goals. Not just raw data, but a curated financial narrative.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="conviction-section">
-            <div class="heading-wrapper">
-                <h1>Why Choose PurseLens?</h1>
-                <p>Thousands of transactions become meaningful insights with clear reports, smart budgets, and an intuitive dashboard designed for everyday life.</p>
-            </div>
-            <div class="call-to-action-wrapper">
-                <h2>Ready to Track Smarter Today?</h2>
-                <p>
-                    Turn thousands of transactions into meaningful financial insights with clear reports, smart budgets, and an intuitive
-                    dashboard built for everyday life. Easily understand where your money goes, track your spending habits, stay on top of
-                    your budgets, and make more informed financial decisions, all from one simple, organized place.
+        
+                <p class="badge">
+                    <span>●</span> 
+                    Financial Clarity Made Simple!
                 </p>
-                <div class="CTA-btn-container">
-                    <a class="get-started-link" href="pages/auth/register.html">Get Started Today for Free</a>
-                    <a class="sign-in" href="pages/auth/login.html">Sign in</a>
+        
+                <h1 id="dynamic-headline"></h1>
+        
+                <p class="descriptions">
+                    Understand where every money goes, plan where it should go, and make smarter financial decisions with PurseLens.
+                </p>
+                
+                <div class="CTA-btn-wrapper">
+                    
+                    <a class="hero-cta" href="pages/auth/register.html">
+                        <span>Get Started</span>
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
+                            viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                        </svg>
+                    </a>
+
+                    <a class="hero-signin" href="pages/auth/login.html">Sign In</a>
+                </div>
+
+                <small class="addons">—— No credit card required.</small>
+            </div>
+
+            <img class="ui-screenshot" src="../docs/assets/images/purselens_dashboard_UI.png" alt="purselens_dashboard_UI">
+        
+        </section>
+
+    </header>
+
+
+    <div class="strip">
+        <div class="strip-inner wrap">
+
+            <div class="pillar reveal">
+                <div class="pillar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                    </svg>
+                </div>
+                <div class="pillar-title">Track</div>
+                <div class="pillar-desc">Know exactly where every money goes, transaction by transaction.</div>
+            </div>
+
+            <div class="pillar reveal d1">
+                <div class="pillar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                    </svg>
+                </div>
+                <div class="pillar-title">Plan</div>
+                <div class="pillar-desc">Build budgets that fit your real life and keep you on course.</div>
+            </div>
+
+            <div class="pillar reveal d2">
+                <div class="pillar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightbulb"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1" />
+                    </svg>
+                </div>
+                <div class="pillar-title">Understand</div>
+                <div class="pillar-desc">Turn raw transactions into clear financial insights and patterns.</div>
+            </div>
+
+            <div class="pillar reveal d3">
+                <div class="pillar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle"
+                        viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                        <path
+                            d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
+                    </svg>
+                </div>
+                <div class="pillar-title">Decide</div>
+                <div class="pillar-desc">Use your financial data to make smarter, more confident choices.</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <main>
+
+        <!-- OVERVIEW SECTION -->
+        <section class="overview-section" id="overview">
+            
+            <div class="wrap">
+                <div class="section-heading reveal">
+                    
+                    <div class="section-label">Product Overview</div>
+                    
+                    <h2 class="section-h2">See your finances at a glance.</h2>
+                    
+                    <p class="section-desc">
+                        Bring your transactions (income and expenses), budgets, categories, and financial insights together in
+                        one clear view.
+                    </p>
+
+                    <ul class="overview-feat-wrapper">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-credit-card"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+                                <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+                            </svg>
+                            <span>Transaction Tracking</span>
+                        </li>
+
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-wallet"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a2 2 0 0 1-1-.268M1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1" />
+                            </svg>
+                            <span>Budget Management</span>
+                        </li>
+
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-tag"
+                                viewBox="0 0 16 16">
+                                <path d="M6 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0" />
+                                <path
+                                    d="M2 1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 1 6.586V2a1 1 0 0 1 1-1m0 5.586 7 7L13.586 9l-7-7H2z" />
+                            </svg>
+                            <span>Category Management</span>
+                        </li>
+
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-lightbulb"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1" />
+                            </svg>
+                            <span>Financial Insights</span>
+                        </li>
+
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-graph-up"
+                                viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M0 0h1v15h15v1H0zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07" />
+                            </svg>
+                            <span>Reports & Analytics</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="ui-wrapper reveal d2">
+                    <img class="ui-screenshot" src="../docs/assets/images/purselens_dashboard_UI.png" alt="dashboard UI image">
                 </div>
             </div>
-        </section>   
+
+        </section>
+
+
+        <!-- FEATURES SECTION -->
+        <section class="feat-section" id="features">
+
+            <div class="wrap">
+
+                <div class="feat-section-heading reveal">
+
+                    <div class="section-label">Features</div>
+                    
+                    <h2 class="section-h2">Everything you need to<br>understand your finances.</h2>
+                    
+                </div>
+
+                <div class="feat-row reveal">
+
+                    <div class="feat-copy">
+                        
+                        <div class="feat-label">Transaction Tracking</div>
+                        
+                        <h3 class="feat-h3">Know where every money goes.</h3>
+                        
+                        <p class="feat-desc">
+                            Record and organize your transactions (income & expenses) with ease, 
+                            giving you a clear and accurate view of your financial activity.
+                        </p>
+                        
+                        <ul class="feat-checks">
+
+                            <li class="feat-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                </svg>
+                                Income and expense tracking
+                            </li>
+
+                            <li class="feat-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                </svg>
+                                Transaction Management
+                            </li>
+
+                            <li class="feat-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                </svg>
+                                Income vs expense indentification
+                            </li>
+
+                            <li class="feat-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                </svg>
+                                Transaction history and details
+                            </li>
+                        </ul>
+                    </div>
+
+                    <img class="ui-screenshot reveal d2" src="../docs/assets/images/transaction_ui_image.png" alt="transaction page UI">
+
+                </div>
+
+                <div class="feat-row reveal">
+
+                    <img class="ui-screenshot reveal d2" src="../docs/assets/images/budget_ui_image.png" alt="budget page UI">
+
+                    <div class="feat-copy">
+                        <div class="feat-label">Budget Management</div>
+
+                        <h3 class="feat-h3">Give every money a purpose.</h3>
+
+                        <p class="feat-desc">
+                            Create structured budgets, monitor your progress in real time, and catch
+                            overspending early before it becomes a problem at the end each budget period.
+                        </p>
+
+                        <ul class="feat-checks">
+
+                            <li class="feat-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                </svg>
+                                Per-category budget limits
+                            </li>
+
+                            <li class="feat-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                </svg>
+                                Budget performance analysis
+                            </li>
+
+                            <li class="feat-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                </svg>
+                                Real-time progress indicators
+                            </li>
+
+                            <li class="feat-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                </svg>
+                                Overspend warnings before period ends
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="feat-row reveal">
+
+                    <div class="feat-copy">
+                        <div class="feat-label">Transaction Categories</div>
+                    
+                        <h3 class="feat-h3">Organize your money with clarity.</h3>
+                    
+                        <p class="feat-desc">
+                            Group transactions into meaningful categories so you can understand where your 
+                            money goes and identify the areas that matter most.
+                        </p>
+                    
+                        <ul class="feat-checks">
+                    
+                            <li class="feat-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                </svg>
+                                Custom spending categories
+                            </li>
+
+                            <li class="feat-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                </svg>
+                                Category-based spending analysis
+                            </li>
+                    
+                            <li class="feat-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                </svg>
+                                Income and expense classification
+                            </li>
+                    
+                            <li class="feat-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                </svg>
+                                Category-based spending insights 
+                            </li>
+                        </ul>
+                    </div>
+
+                    <img class="ui-screenshot reveal d2" src="../docs/assets/images/category_ui_image.png" alt="category page UI">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INSIGHTS SECTION -->
+        <section class="insight-section" id="insights">
+
+            <div class="wrap">
+
+                <div class="wrap-inner reveal">
+
+                    <div class="section-label">Analytics</div>
+
+                    <h2 class="section-h2">From transactions to a clearer financial picture.</h2>
+                    
+                    <p class="section-desc">
+                        Understand your spending patterns, spot anomalies, and get the context needed
+                        to make meaningful financial decisions month after month.
+                    </p>
+
+                    <div class="insight-showcase-wrapper">
+
+                        <div class="showcase-card info">
+                            
+                            <small class="showcase-card-pill">Highest Spending</small>
+                            
+                            <h2 class="showcase-card-title">Housing</h2>
+                            
+                            <small class="showcase-card-txt">Covers 65% of your total budgets</small>
+                        </div>
+
+                        <div class="showcase-card warning">
+                            
+                            <small class="showcase-card-pill">Warning</small>
+                            
+                            <h2 class="showcase-card-title">Budgets</h2>
+                            
+                            <small class="showcase-card-txt">3 budgets are nearing their limits.</small>
+                        </div>
+
+                        <div class="showcase-card danger">
+                        
+                            <small class="showcase-card-pill">Danger</small>
+                        
+                            <h2 class="showcase-card-title">Budgets</h2>
+                        
+                            <small class="showcase-card-txt">You have exceeded 2 budget(s).</small>
+                        </div>
+
+                        <div class="showcase-card info">
+                            
+                            <small class="showcase-card-pill">Most Used Category</small>
+                            
+                            <h2 class="showcase-card-title">Food & Dining</h2>
+                            
+                            <small class="showcase-card-txt">24 transactions this month</small>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="ui-wrapper reveal d2">
+                    <img class="ui-screenshot" src="../docs/assets/images/analytics_ui_image.png" alt="" srcset="">
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- WHY PURSELENS SECTION -->
+        <section class="why-section">
+
+            <div class="wrap">
+                <div class="why-inner">
+                    
+                    <div class="why-details reveal">
+                        
+                        <div class="section-label">Why PurseLens</div>
+                        
+                        <h2 class="why-h2">Your money tells a story.<br><span>PurseLens helps you understand it.</span></h2>
+                        
+                        <p class="why-p">
+                            Thousands of transactions become meaningful insights when your finances are
+                            organized in one place — giving you the clarity and confidence to make better decisions.
+                        </p>
+                        
+                        <div class="why-points-wrapper">
+
+                            <div class="why-point">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-clock"
+                                    viewBox="0 0 16 16">
+                                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
+                                </svg>
+
+                                <div class="why-pt-txt">Real-time tracking means no end-of-month surprises.</div>
+                            </div>
+
+                            <div class="why-point">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-bar-chart-fill"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
+                                </svg>
+
+                                <div class="why-pt-txt">
+                                    Visual reports that make spending patterns immediately obvious.
+                                </div>
+                            </div>
+
+                            <div class="why-point">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-stars"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.73 1.73 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z" />
+                                </svg>
+                                <div class="why-pt-txt">Budgets that flex to match how you actually live and spend.</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="why-metrics-wrapper reveal d2">
+
+                        <div class="why-metric-card">
+                            <div class="why-metric-card-value income" data-target="12450" data-prefix="$">$12,450.80</div>
+                            <small class="why-metric-card-title">Total Income</small>
+                            <small class="why-metric-card-subtext">Earned this month</small>
+                        </div>
+
+                        <div class="why-metric-card">
+                            <div class="why-metric-card-value expenses" data-target="7350" data-prefix="$">$7,350.40</div>
+                            <small class="why-metric-card-title">Total Expenses</small>
+                            <small class="why-metric-card-subtext">Spent this month</small>
+                        </div>
+
+                        <div class="why-metric-card">
+                            <div class="why-metric-card-value overall-util" data-target="91.875" data-prefix="$">91.88</div>
+                            <small class="why-metric-card-title">Overall Utilization</small>
+                            <small class="why-metric-card-subtext">Budget in use this month</small>
+                        </div>
+
+                        <div class="why-metric-card">
+                            <div class="why-metric-card-value balance" data-target="5100.40" data-prefix="$">$5,100.40</div>
+                            <small class="why-metric-card-title">Available Balance</small>
+                            <small class="why-metric-card-subtext">Remaining this month</small>
+                        </div>
+
+                        <div class="why-metric-card">
+                            <div class="why-metric-card-value budget" data-target="8000" data-prefix="$">$8,000.00</div>
+                            <small class="why-metric-card-title">Total Budget</small>
+                            <small class="why-metric-card-subtext">Planned across categories</small>
+                        </div>
+
+                        <div class="why-metric-card">
+                            <div class="why-metric-card-value active-budget" data-target="8">8</div>
+                            <small class="why-metric-card-title">Active Budgets</small>
+                            <small class="why-metric-card-subtext">Across spending categories</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- SECURITY SECTION -->
+        <section class="security-section" id="security">
+
+            <div class="wrap">
+
+                <div class="security-details-wrapper reveal">
+                
+                    <div class="section-label">Privacy &amp; Security</div>
+                
+                    <h2 class="secure-title">
+                        Your financial data deserves clarity and care.
+                    </h2>
+                
+                    <small class="secure-desc">
+                        PurseLens is designed with privacy and user control at the center. Your data is yours — we use
+                        it to help you understand your finances, not to build advertising profiles or sell to third
+                        parties.
+                    </small>
+                
+                    <div class="trust-note">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-shield-check"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56" />
+                            <path
+                                d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+                        </svg>
+
+                        <div class="trust-note-txt">
+                            PurseLens stores your data securely and never sells or shares your
+                            personal financial information with third parties.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="security-cards-wrapper reveal d2">
+                
+                    <div class="sec-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor" class="bi bi-shield-lock"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56" />
+                            <path
+                                d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415" />
+                        </svg>
+
+                        <div class="sec-card-t">Secure by Design</div>
+
+                        <small class="sec-card-p">
+                            Built from the ground up with security practices that protect your
+                            financial information at every layer.
+                        </small>
+                    </div>
+                
+                    <div class="sec-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor" class="bi bi-check"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                        </svg>
+
+                        <div class="sec-card-t">Your Data, Your Control</div>
+                        
+                        <small class="sec-card-p">You decide what PurseLens holds. Export or delete your financial data at
+                            any time, no questions asked.
+                        </small>
+                    </div>
+                
+                    <div class="sec-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor"
+                            class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+                        </svg>
+
+                        <div class="sec-card-t">No Advertising</div>
+
+                        <small class="sec-card-p">PurseLens is a product you use, not an audience to monetize. No ads, no
+                            data selling — ever.
+                        </small>
+                    </div>
+                
+                    <div class="sec-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor" class="bi bi-shield-check"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56" />
+                            <path
+                                d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+                        </svg>
+
+                        <div class="sec-card-t">Private by Default</div>
+
+                        <small class="sec-card-p">Only you can access your records. We don't browse or analyze your
+                            personal financial data internally.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL CTA -->
+        <section class="cta-section">
+
+            <div class="wrap reveal">
+
+                <div class="section-label">Get Started</div>
+
+                <h2 class="section-h2">Your finances.<br>Finally clear.</h2>
+                
+                <p class="section-desc">
+                    Start tracking smarter with ease, understanding your spendings, and building better financial habits, all
+                    in one place.
+                </p>
+
+                <div class="section-cta-wrapper">
+
+                    <a class="nav-cta" href="pages/auth/register.html">
+                        <span>Get Started</span>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
+                            viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                        </svg>
+                    </a>
+
+                    <a class="nav-signin" href="pages/auth/login.html">Sign In</a>
+                </div>
+
+                <small class="cta-note">—— No credit card required ——</small>
+            </div>
+
+        </section>
+
     </main>
-    <footer>
-        <div class="logo-wrapper">
-            <img src="assets/images/PurseLens_logo.png" alt="PurseLens logo image" srcset="">
-            <h2>PurseLens</h2>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="wrap">
+
+            <div class="footer-inner">
+                
+                <div class="footer-info">
+                    <div class="logo-wrapper">
+                        <img src="assets/images/PurseLens_logo.png" alt="PurseLens logo image" srcset="">
+                        <h2>PurseLens</h2>
+                    </div>
+
+                    <p class="footer-tagline">
+                        Financial clarity for every earnings and expenditures.<br>Your money, organized and understood.
+                    </p>
+                </div>
+
+                <div class="footer-cols">
+                    <div>
+                        <div class="footer-col-t">Product</div>
+                        <ul class="footer-col-links">
+                            <li><a class="footer-col-link" href="#home">Home</a></li>
+                            <li><a class="footer-col-link" href="#overview">How It Works</a></li>
+                            <li><a class="footer-col-link" href="#features">Features</a></li>
+                            <li><a class="footer-col-link" href="#insights">Insights</a></li>
+                            <li><a class="footer-col-link" href="#security">Security</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="footer-col-t">Company</div>
+                        <ul class="footer-col-links">
+                            <li><a class="footer-col-link" href="../docs/about.html">About</a></li>
+                            <li><a class="footer-col-link" href="../docs/contact.html">Contact</a></li>
+                            <li><a class="footer-col-link" href="../docs/blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="footer-col-t">Legal</div>
+                        <ul class="footer-col-links">
+                            <li><a class="footer-col-link" href="../docs/policy_privacy.html">Privacy Policy</a></li>
+                            <li><a class="footer-col-link" href="../docs/terms_of_service.html">Terms of Service</a></li>
+                            <li><a class="footer-col-link" href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="footer-bot">
+                <small class="footer-copy">© 2026 PurseLens. All rights reserved.</small>
+                <small class="footer-made">Financial clarity made simple.</small>
+            </div>
+
         </div>
-        <div class="footer-links-wrapper">
-            <a href="about.html" class="footer-links">About</a>
-            <a href="contact.html" class="footer-links">Contact</a>
-            <a href="policy_privacy.html" class="footer-links">Policy Privacy</a>
-            <a href="terms_of_service.html" class="footer-links">Terms of Service</a>
-        </div>
-        <div class="copyright-wrapper">
-            <p>© 2026 PurseLens. All rights reserved.</p>
-        </div>
+
     </footer>
-    <script src="js/index.js"></script>
+
+    <script src="../docs/js/index.js"></script>
 </body>
 </html>
