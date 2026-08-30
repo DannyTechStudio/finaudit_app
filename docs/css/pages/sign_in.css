@@ -3,6 +3,10 @@ body {
     padding: 0;
 }
 
+p {
+    font-size: 18px;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -108,10 +112,15 @@ fieldset label.required::after {
 
 fieldset input {
     width: 90%;
+    font-size: 16px;
     padding: 8px;
     outline: none;
     border: 2px solid var(--border-2);
     border-radius: 5px;
+}
+
+fieldset input:focus {
+    outline: 2px solid var(--border-visible);
 }
 
 #login-btn {
@@ -185,8 +194,8 @@ fieldset input {
     aspect-ratio: 1;
     border-radius: 50%;
     background:
-        radial-gradient(farthest-side, #040013 94%, #0000) top/5px 5px no-repeat,
-        conic-gradient(#0000 30%, #040013);
+        radial-gradient(farthest-side, var(--text-primary) 94%, #0000) top/5px 5px no-repeat,
+        conic-gradient(#0000 30%, var(--text-primary));
     -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 5px), #000 0);
     animation: spin 1s infinite linear;
 }
@@ -285,22 +294,24 @@ fieldset input {
     display: none;
     align-items: center;
     justify-content: center;
-    width: auto;
-    height: 35px;
-    padding: 0 12px 0 12px;
+    width: 20%;
+    height: auto;
+    text-align: left;
+    text-wrap: wrap;
+    font-size: 18px;
+    padding: 10px 12px;
+    color: var(--deep-blue);
     border: 2px solid var(--border);
     border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: var(--shadow-md), 0 1px 3px rgba(0, 0, 0, 0.068);
 }
 
-.success {
+.input-validation-wrapper .success {
     background-color: var(--success);
 }
 
-.danger {
+.input-validation-wrapper .error {
     background-color: var(--danger-3);
 }
 
-.error-output {
-    color: var(--deep-blue);
-    font-size: 16px;
-}
