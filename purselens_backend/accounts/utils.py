@@ -5,6 +5,7 @@ from datetime import timedelta
 from django.core.mail import send_mail
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
+from urllib.parse import urlencode
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.conf import settings
 
@@ -48,10 +49,16 @@ def generate_verfication_token(user):
 
 
 def send_verification_email(user, raw_token):
+    
+    params = urlencode({
+        "email": user.email,
+        "token": raw_token
+    })
+    
     verification_link = (
         f"{settings.FRONTEND_URL.rstrip('/')}"
         f"/pages/auth/verify_email.html"
-        f"?token={raw_token}"
+        f"?{params}"
     )
 
     send_verification_email_via_resend(
