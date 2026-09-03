@@ -4,13 +4,37 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
+    font-family: Nunito, sans-serif;
+    background-color: var(--bg-2);
+}
+
+h1 {
+    line-height: 1;
+    text-align: center;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+}
+
+h2 {
+    line-height: 1;
+    font-weight: 900;
+    text-align: center;
+    font-size: clamp(2rem, 2vw, 3.5rem);
 }
 
 p {
-    font-size: 18px;
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+a {
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
 }
 
 main {
@@ -47,6 +71,7 @@ main section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
     width: 30%;
     padding: 20px;
 }
@@ -57,18 +82,21 @@ main section {
     justify-content: space-between;
     gap: 0.5rem;
     width: 32%;
+    width: max-content;
     padding: 0;
-    margin-bottom: 2rem;
 }
+
 
 .title-wrapper img {
     padding: 0;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 }
 
-.title-wrapper h2 {
+.title-wrapper span {
     color: var(--custom-blue);
+    font-weight: 900;
+    font-size: 1.2rem;
 }
 
 .heading-wrapper {
@@ -76,10 +104,10 @@ main section {
     flex-direction: column;
     align-items: center;
     padding: 0;
-    margin-bottom: 2rem;
 }
 
-.heading-wrapper h1 {
+.heading-wrapper h2 {
+    font-weight: 900;
     color: var(--custom-blue);
 }
 
@@ -126,13 +154,13 @@ fieldset {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
     gap: 0.3rem;
     padding: 0;
     border: none;
 }
 
 fieldset label {
+    font-weight: 600;
     color: var(--text-primary);
 }
 
@@ -143,7 +171,7 @@ fieldset label.required::after {
 }
 
 fieldset input {
-    width: 92%;
+    width: 100%;
     font-size: 16px;
     padding: 8px;
     outline: none;
@@ -165,7 +193,7 @@ fieldset input:focus {
     font-size: 18px;
     font-weight: bold;
     border: none;
-    border-radius: 20px;
+    border-radius: 8px;
     color: #1a1a1a;
     color: var(--text-primary);
     background-color: var(--custom-orange);
@@ -180,7 +208,7 @@ fieldset input:focus {
 
 .toggle-pw-btn {
     position: absolute;
-    right: 30px;
+    right: 5px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
@@ -245,12 +273,10 @@ fieldset input:focus {
     justify-content: center;
     gap: 2rem;
     width: 100%;
-    margin: 30px 0;
-
 }
 
 .social-wrapper p {
-    color: var(--text-primary);
+    color: var(--text-muted);
 }
 
 .divider {
@@ -379,10 +405,6 @@ fieldset input:focus {
     color: var(--text-primary);
 }
 
-.card p {
-    font-size: 18px;
-}
-
 .card-title,
 .card-sub-wrapper p,
 .card-notice {
@@ -479,5 +501,222 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 0;
+    gap: 2rem;
+    padding: 1rem 0;
+    background-color: transparent;
+    margin-top: 2rem;
 }
+
+footer small {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    background-color: transparent;
+}
+
+footer small a {
+    text-decoration: none;
+    color: var(--links);
+    transition: all 0.3s ease;
+}
+
+footer small a:hover {
+    text-decoration: underline;
+}
+
+
+/*----------- RESPONSIVENESS -------------------*/
+@media (max-width: 1060px) {
+    .main-container {
+        width: 45%;
+    }
+
+    .title-wrapper,
+    .oauth-wrapper,
+    .divider {
+        width: 45%;
+    }
+
+    .social-wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .main-container {
+        width: 60%;
+    }
+
+    .title-wrapper {
+        width: max-content;
+    }
+
+    .oauth-wrapper,
+    .divider {
+        width: 55%;
+    }
+
+    fieldset {
+        width: 90%;
+    }
+
+    fieldset input {
+        width: 95%;
+    }
+
+    #submit-btn {
+        width: 90%;
+    }
+
+    .message-output {
+        width: 35%;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 20px 0;
+        min-height: 100vh;
+    }
+
+    .main-container {
+        width: 92%;
+        padding: 10px;
+    }
+
+    .title-wrapper {
+        width: max-content;
+        margin-bottom: 1.5rem;
+    }
+
+    .title-wrapper img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .heading-wrapper {
+        margin-bottom: 1.5rem;
+    }
+
+    form {
+        gap: 0.85rem;
+        padding: 20px 0 20px 0;
+    }
+
+    fieldset {
+        width: 88%;
+    }
+
+    fieldset input {
+        width: 100%;
+        font-size: 16px;
+        /* prevents iOS zoom-on-focus */
+    }
+
+    .input-wrapper {
+        width: 100%;
+    }
+
+    #submit-btn {
+        width: 88%;
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .toggle-pw-btn {
+        right: 12px;
+    }
+
+    .social-wrapper {
+        gap: 1.5rem;
+        margin: 20px 0;
+    }
+
+    .divider,
+    .oauth-wrapper,
+    .options-wrapper .oauth-wrapper {
+        width: 88%;
+    }
+
+    .oauth-wrapper a {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .message-output {
+        left: 4%;
+        width: 92%;
+        top: auto;
+        bottom: 3%;
+        font-size: 16px;
+    }
+
+    .email-link {
+        width: 88%;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .main-container {
+        width: 96%;
+        padding: 8px;
+    }
+
+    .title-wrapper {
+        width: max-content;
+    }
+
+    fieldset {
+        width: 92%;
+    }
+
+    fieldset input {
+        padding: 10px 8px;
+    }
+
+    #submit-btn {
+        width: 92%;
+        font-size: 15px;
+        padding: 11px;
+    }
+
+    .divider,
+    .oauth-wrapper {
+        width: 92%;
+    }
+
+    .oauth-wrapper a {
+        font-size: 14px;
+        gap: 0.2rem;
+    }
+
+    .oauth-wrapper img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .message-output {
+        width: 94%;
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .loader,
+    .loader-2,
+    .loader-3 {
+        animation: none !important;
+    }
+}
+
