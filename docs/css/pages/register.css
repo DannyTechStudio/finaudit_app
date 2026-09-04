@@ -34,7 +34,7 @@ p {
 }
 
 a {
-    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    font-size: clamp(1rem, 1.2vw, 1rem);
 }
 
 main {
@@ -535,7 +535,6 @@ footer small a:hover {
         width: 45%;
     }
 
-    .title-wrapper,
     .oauth-wrapper,
     .divider {
         width: 45%;
@@ -543,6 +542,22 @@ footer small a:hover {
 
     .social-wrapper {
         width: 100%;
+    }
+    
+    .divider{
+        width: 90%;
+    }
+    
+    .oauth-wrapper{
+        width: 80%;
+    }
+
+    .message-output {
+        width: 30%;
+    }
+    
+    footer small {
+        width: 45%;
     }
 }
 
@@ -565,15 +580,26 @@ footer small a:hover {
     }
 
     fieldset input {
-        width: 95%;
+        width: 100%;
     }
 
     #submit-btn {
         width: 90%;
     }
-
+    
+    .social-wrapper .divider,
+    .social-wrapper .options-wrapper,
+    .options-wrapper .oauth-wrapper {
+        width: 90%;
+    }
+    
     .message-output {
         width: 35%;
+    }
+
+    footer small {
+        width: 65%;
+        padding: 0 2rem;
     }
 }
 
@@ -659,6 +685,11 @@ footer small a:hover {
         width: 88%;
         font-size: 16px;
     }
+
+    footer small {
+        width: 100%;
+        padding: 0 2rem;
+    }
 }
 
 @media (max-width: 380px) {
@@ -702,8 +733,16 @@ footer small a:hover {
 
     .message-output {
         width: 94%;
-        font-size: 14px;
+        font-size: 16px;
         padding: 8px 10px;
+        position: fixed;
+        left: 2%;
+        top: 90%;
+    }
+
+    footer small {
+        width: 100%;
+        padding: 0 2rem;
     }
 }
 
