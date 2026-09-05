@@ -1,0 +1,39 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Databases
+*.sqlite3
+
+# Editor config
+.vscode/
+
+# Virtual environments
+finaudit_env/
+purselens_env/
+venv/
+env/
+
+# Test directories & files
+test_files/
+*.http
+
+# Personal playground directories & Files
+scripts/
+playground.py
+
+# Profile image folder
+media

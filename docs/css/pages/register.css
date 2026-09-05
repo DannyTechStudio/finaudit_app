@@ -106,7 +106,8 @@ main section {
     padding: 0;
 }
 
-.heading-wrapper h2 {
+.heading-wrapper h2,
+.card-title {
     font-weight: 900;
     color: var(--custom-blue);
 }
@@ -674,8 +675,8 @@ footer small a:hover {
     }
 
     .message-output {
-        left: 4%;
-        width: 92%;
+        left: 10%;
+        width: 80%;
         top: auto;
         bottom: 3%;
         font-size: 16px;
@@ -734,7 +735,7 @@ footer small a:hover {
     .message-output {
         width: 94%;
         font-size: 16px;
-        padding: 8px 10px;
+        padding: 1.8rem 10px;
         position: fixed;
         left: 2%;
         top: 90%;
